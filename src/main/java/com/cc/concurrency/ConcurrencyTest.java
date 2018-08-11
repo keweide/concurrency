@@ -4,6 +4,7 @@ import com.cc.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import java.util.concurrent.*;
 
@@ -23,8 +24,11 @@ public class ConcurrencyTest {
     private static int count = 0;
 
     public static void main(String[] args) throws Exception {
+        //定义线程池
         ExecutorService executorService = Executors.newCachedThreadPool();
+        //信号量，控制并发线程数
         final Semaphore semaphore = new Semaphore(threadTotal);
+        //计数器
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
         for (int i = 0; i < clientTotal;i ++) {
             executorService.execute(() -> {
@@ -35,7 +39,7 @@ public class ConcurrencyTest {
                 }catch (Exception e){
                     log.info("");
                 }
-                countDownLatch.countDown();
+                countDownLatch.countDown();//每执行一次计数器减一
             });
         }
         countDownLatch.await();

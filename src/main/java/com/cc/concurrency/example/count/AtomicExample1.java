@@ -15,7 +15,7 @@ import java.util.concurrent.Semaphore;
  * Created by think on 2018.05.22.
  */
 @NotThreadSafe
-public class ConcurrencyExample1 {
+public class AtomicExample1 {
 
 
     private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);

@@ -1,7 +1,6 @@
 package com.cc.concurrency.example.count;
 
 import com.cc.concurrency.ConcurrencyTest;
-import com.cc.concurrency.annoations.NotThreadSafe;
 import com.cc.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by think on 2018.05.22.
  */
 @ThreadSafe
-public class ConcurrencyExample2 {
+public class AtomicExample3 {
 
 
     private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
@@ -25,8 +24,9 @@ public class ConcurrencyExample2 {
     //同时并发执行的线程数
     private static int threadTotal = 200;
 
-    private static AtomicInteger count = new AtomicInteger(0);
+//    private static AtomicInteger count = new AtomicInteger(0);
 
+    private static  int count = 0;
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
@@ -47,8 +47,8 @@ public class ConcurrencyExample2 {
         executorService.shutdown();
         log.info("count :"+count);
     }
-    private static void add(){
-        count.incrementAndGet();
+    private static synchronized void add(){
+        count ++;
     }
 
 }
