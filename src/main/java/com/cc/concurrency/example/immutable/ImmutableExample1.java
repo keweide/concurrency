@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by think on 2018.05.23.
  */
-public class ImmutableExample {
+public class ImmutableExample1 {
 
     private final static Integer a = 1;
     private final String b = "2";

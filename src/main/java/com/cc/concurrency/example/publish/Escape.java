@@ -14,15 +14,15 @@ public class Escape {
 
     private static Logger log = LoggerFactory.getLogger(UnsafePublish.class);
 
-    private int thisCanEscape = 0;
+    private int thisCanBeEscape = 0;
 
     public Escape(){
         new InnerClass();
     }
-
+    //  内部类
     private class InnerClass{
         public InnerClass(){
-            log.info("{}",Escape.this.thisCanEscape);
+            log.info("{}",Escape.this.thisCanBeEscape);
         }
     }
 

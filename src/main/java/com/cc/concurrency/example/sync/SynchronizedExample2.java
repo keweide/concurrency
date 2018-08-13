@@ -6,10 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * 修饰代码块
- * Created by think on 2018.05.22.
- */
+
 public class SynchronizedExample2 {
 
     private static final Logger log = LoggerFactory.getLogger(SynchronizedExample2.class);

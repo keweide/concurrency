@@ -12,6 +12,7 @@ public class CyclicBarrierExample3 {
 
     private final static Logger log = LoggerFactory.getLogger(CyclicBarrierExample3.class);
 
+    // 当线程达到某个值之后，优先执行runnable函数
     private static CyclicBarrier barrier = new CyclicBarrier(5,()->{
         log.info("callback is running");
     });

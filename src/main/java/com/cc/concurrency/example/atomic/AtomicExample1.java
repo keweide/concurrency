@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicExample1 {
 
 
-    private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
+    private final static Logger log = LoggerFactory.getLogger(AtomicExample1.class);
     //请求总数
     private static int clientTotal = 5000;
     //同时并发执行的线程数

@@ -1,6 +1,5 @@
 package com.cc.concurrency.example.aqs;
 
-import com.cc.concurrency.example.lock.LockExample6;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,9 +8,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class FutureExample1 {
+public class FutureExample {
 
-    private final static Logger log = LoggerFactory.getLogger(FutureExample1.class);
+    private final static Logger log = LoggerFactory.getLogger(FutureExample.class);
 
     static class MyCallable implements Callable<String> {
 

@@ -27,7 +27,6 @@ public class SingletonExample4 {
                     instance = new SingletonExample4();
                 }
             }
-
         }
         return instance;
     }

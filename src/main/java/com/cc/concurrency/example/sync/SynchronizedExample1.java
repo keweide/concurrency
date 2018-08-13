@@ -14,6 +14,7 @@ public class SynchronizedExample1 {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    //修饰一个代码块
     public void test1(int j){
         synchronized (this){
             for (int i = 0; i < 10; i++) {
@@ -22,6 +23,7 @@ public class SynchronizedExample1 {
         }
     }
 
+    //修饰一个方法
     public synchronized void test2(){
         for (int i = 0; i < 10; i++) {
             log.info("test2 - {}" ,i);

@@ -15,10 +15,9 @@ import java.util.concurrent.atomic.AtomicReference;
 @ThreadSafe
 public class AtomicExample5 {
 
-    private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
-
+    private final static Logger log = LoggerFactory.getLogger(AtomicExample5.class);
+    //更新某个类的某个字段
     private static AtomicIntegerFieldUpdater<AtomicExample5> update = AtomicIntegerFieldUpdater.newUpdater(AtomicExample5.class,"count");
-
 
     public volatile int count = 100;
 
@@ -30,11 +29,11 @@ public class AtomicExample5 {
 
     public static void main(String[] args) {
         if (update.compareAndSet(example5,100,120)){
-            log.info("update success,{}",example5.getCount());
+            log.info("update success 1,{}",example5.getCount());
         }
 
         if (update.compareAndSet(example5,100,120)){
-            log.info("update success,{}",example5.getCount());
+            log.info("update success 2,{}",example5.getCount());
         }else {
             log.info("update failed,{}",example5.getCount());
         }

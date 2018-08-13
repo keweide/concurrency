@@ -2,7 +2,7 @@ package com.cc.concurrency.example.count;
 
 import com.cc.concurrency.ConcurrencyTest;
 import com.cc.concurrency.annoations.NotThreadSafe;
-import com.cc.concurrency.annoations.ThreadSafe;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ import java.util.concurrent.Semaphore;
  * Created by think on 2018.05.22.
  */
 @NotThreadSafe
-public class AtomicExample4 {
+public class ConcurrencyExample1 {
 
 
     private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
@@ -24,9 +24,7 @@ public class AtomicExample4 {
     //同时并发执行的线程数
     private static int threadTotal = 200;
 
-//    private static AtomicInteger count = new AtomicInteger(0);
-
-    private static volatile int count = 0;
+    private static int count = 0;
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();

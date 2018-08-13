@@ -21,7 +21,7 @@ public class UnsafePublish {
     public static void main(String[] args) {
         UnsafePublish unsafePublish = new UnsafePublish();
         log.info("{}", Arrays.toString(unsafePublish.getStates()));
-
+        //对类私有属性的值进行修改
         unsafePublish.getStates()[0] = "d";
 
         log.info("{}", Arrays.toString(unsafePublish.getStates()));

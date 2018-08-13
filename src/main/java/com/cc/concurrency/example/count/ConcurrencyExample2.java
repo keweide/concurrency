@@ -2,7 +2,7 @@ package com.cc.concurrency.example.count;
 
 import com.cc.concurrency.ConcurrencyTest;
 import com.cc.concurrency.annoations.NotThreadSafe;
-import lombok.extern.slf4j.Slf4j;
+import com.cc.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,12 +10,14 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by think on 2018.05.22.
  */
-@NotThreadSafe
-public class AtomicExample1 {
+@ThreadSafe
+public class ConcurrencyExample2 {
 
 
     private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
@@ -23,8 +25,10 @@ public class AtomicExample1 {
     private static int clientTotal = 5000;
     //同时并发执行的线程数
     private static int threadTotal = 200;
+    //
+   // private static AtomicInteger count = new AtomicInteger(0);
 
-    private static int count = 0;
+    private static AtomicLong count = new AtomicLong(0);
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -47,7 +51,7 @@ public class AtomicExample1 {
         log.info("count :"+count);
     }
     private static void add(){
-        count ++;
+        count.incrementAndGet();
     }
 
 }

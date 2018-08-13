@@ -13,13 +13,15 @@ import java.util.Vector;
  */
 public class VectorExample3 {
 
-    public static void test1(Vector<Integer> vector){
+    //java.util.ConcurrentModificationException
+    public static void test1(Vector<Integer> vector){//foreach
         for (Integer i : vector){
             if (i.equals(3)){
                 vector.remove(i);
             }
         }
     }
+    //java.util.ConcurrentModificationException
     public static void test2(Vector<Integer> vector){
         Iterator<Integer> iterator = vector.iterator();
         while (iterator.hasNext()){

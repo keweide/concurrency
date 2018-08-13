@@ -16,8 +16,9 @@ public class SingletonExample2 {
 
     }
 
-    //单利对象
+    //单例对象
     private static SingletonExample2 instance = new SingletonExample2();
+
     //静态工厂方法
     public static SingletonExample2 getInstance(){
         return instance;

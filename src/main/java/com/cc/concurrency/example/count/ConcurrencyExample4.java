@@ -10,13 +10,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by think on 2018.05.22.
  */
-@ThreadSafe
-public class AtomicExample2 {
+@NotThreadSafe
+public class ConcurrencyExample4 {
 
 
     private final static Logger log = LoggerFactory.getLogger(ConcurrencyTest.class);
@@ -24,8 +23,8 @@ public class AtomicExample2 {
     private static int clientTotal = 5000;
     //同时并发执行的线程数
     private static int threadTotal = 200;
-    //
-    private static AtomicInteger count = new AtomicInteger(0);
+
+    private static volatile int count = 0;
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -48,7 +47,7 @@ public class AtomicExample2 {
         log.info("count :"+count);
     }
     private static void add(){
-        count.incrementAndGet();
+        count ++;
     }
 
 }
