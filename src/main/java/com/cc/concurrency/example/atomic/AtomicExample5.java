@@ -24,10 +24,11 @@ public class AtomicExample5 {
     public int getCount() {
         return count;
     }
-
-    private static  AtomicExample5 example5 = new AtomicExample5();
-
+    
     public static void main(String[] args) {
+
+        AtomicExample5 example5 = new AtomicExample5();
+
         if (update.compareAndSet(example5,100,120)){
             log.info("update success 1,{}",example5.getCount());
         }

@@ -22,9 +22,9 @@ public class SemaphoreExample3 {
             final int threadNum = i;
             executorService.execute(() ->{
                 try {
-                    if (semaphore.tryAcquire()){
+                    if (semaphore.tryAcquire()){//尝试获取一个许可
                         test(threadNum);
-                        semaphore.release();
+                        semaphore.release();//释放一个许可
                     }
                 }catch (Exception e){
                     log.error("");

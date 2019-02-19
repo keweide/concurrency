@@ -20,6 +20,7 @@ public class ImmutableExample1 {
     }
 
     public static void main(String[] args) {
+        //引用类型初始化之后不能指向别的对象，但是能修改值
         map.put(1,3);
         System.out.println(map.get(1));
     }

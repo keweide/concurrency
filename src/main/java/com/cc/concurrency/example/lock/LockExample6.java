@@ -21,7 +21,7 @@ public class LockExample6 {
             try {
                 reentrantLock.lock();
                 log.info("wait signal"); // 1
-                condition.await();
+                condition.await(); //线程释放锁，进入等待队列
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

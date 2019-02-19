@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 public class CyclicBarrierExample {
 
     private final static Logger log = LoggerFactory.getLogger(CyclicBarrierExample.class);
-
+    //
     private static CyclicBarrier barrier = new CyclicBarrier(5);
 
     public static void main(String[] args) throws Exception{

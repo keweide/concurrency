@@ -25,10 +25,10 @@ public class ConcurrencyExample2 {
     private static int clientTotal = 5000;
     //同时并发执行的线程数
     private static int threadTotal = 200;
-    //
-   // private static AtomicInteger count = new AtomicInteger(0);
+    
+    private static AtomicInteger count = new AtomicInteger(0);
 
-    private static AtomicLong count = new AtomicLong(0);
+    //private static AtomicLong count = new AtomicLong(0);
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();

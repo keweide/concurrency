@@ -5,7 +5,7 @@ import com.cc.concurrency.annoations.ThreadSafe;
 
 /**
  * 饿汉模式
- * 在类被装载的时候创建
+ * 实例在类被装载的时候创建
  * Created by think on 2018.05.23.
  */
 @ThreadSafe

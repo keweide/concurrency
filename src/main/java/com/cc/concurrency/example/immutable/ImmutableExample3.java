@@ -18,9 +18,9 @@ public class ImmutableExample3 {
     private final static ImmutableList list = ImmutableList.of(1,2,3);
 
     private final static ImmutableSet set = ImmutableSet.copyOf(list);
-
+    //map实例化方法一
     private final static ImmutableMap<Integer,Integer> map1 = ImmutableMap.of(1,2,3,4,5,6);
-
+    //map实例化方法二
     private final static ImmutableMap map2 = ImmutableMap.builder().put(1,2).put(3,4).put(5,6).build();
 
     public static void main(String[] args) {

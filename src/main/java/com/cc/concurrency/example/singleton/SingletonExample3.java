@@ -12,6 +12,23 @@ import com.cc.concurrency.annoations.ThreadSafe;
 @ThreadSafe
 @NotRecommend
 public class SingletonExample3 {
+    
+//    private SingletonExample3(){
+//        
+//    }
+//    
+//    private static SingletonExample3 instance = null;
+//    
+//    public static SingletonExample3 getInstance(){
+//        if (instance == null)
+//            instance = new SingletonExample3();
+//        
+//        return instance;
+//    }
+    
+    
+    
+    
 
     //私有构造函数
     private SingletonExample3(){

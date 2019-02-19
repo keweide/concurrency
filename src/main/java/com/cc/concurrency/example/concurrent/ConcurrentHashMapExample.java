@@ -22,7 +22,7 @@ public class ConcurrentHashMapExample {
     //同时并发执行的线程数
     private static int threadTotal = 200;
 
-    private static Map<Integer,Integer> list = new ConcurrentHashMap<>();
+    private static Map<Integer,Integer> map = new ConcurrentHashMap<>();
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -43,10 +43,10 @@ public class ConcurrentHashMapExample {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("size :"+list.size());
+        log.info("size :"+map.size());
     }
     private static void update(int i){
-        list.put(i,i);
+        map.put(i,i);
     }
 }
 

@@ -34,6 +34,7 @@ public class SynchronizedExample1 {
         SynchronizedExample1 example1 = new SynchronizedExample1();
         SynchronizedExample1 example2 = new SynchronizedExample1();
         ExecutorService service = Executors.newCachedThreadPool();
+        
         service.execute(() ->{
             example1.test1(1);
         });
